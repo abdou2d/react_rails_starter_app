@@ -19,10 +19,10 @@ class User < ActiveRecord::Base
   #
   # Omniauth related methods
   #
-  def self.find_for_oauth(auth)
-    authentication = Authentication.where(uid: auth["uid"].to_s, provider: auth["provider"]).first
-    authentication&.user
-  end
+#   def self.find_for_oauth(auth)
+#     authentication = Authentication.where(uid: auth["uid"].to_s, provider: auth["provider"]).first
+#     authentication&.user
+#   end
 
   def apply_oauth(auth)
     self.attributes = User.params_for_create(auth)
